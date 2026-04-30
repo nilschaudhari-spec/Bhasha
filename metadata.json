@@ -1,0 +1,6 @@
+{
+  "name": "Bhasha",
+  "description": "A gamified language learning app with vocabulary, grammar, and pronunciation exercises, featuring progress tracking, leaderboards, daily challenges, and spaced repetition.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}

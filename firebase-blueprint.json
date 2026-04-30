@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user profile in the Bhasha app.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "xp": { "type": "number" },
+        "weeklyXp": { "type": "number" },
+        "streak": { "type": "number" },
+        "lastActiveDate": { "type": "string" },
+        "coins": { "type": "number" },
+        "dailyGoal": { "type": "number" },
+        "currentCourseId": { "type": "string" },
+        "completedLessons": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["email", "xp", "weeklyXp", "streak", "coins", "dailyGoal", "createdAt", "updatedAt"]
+    },
+    "VocabularyItem": {
+      "title": "Vocabulary Item",
+      "description": "An SRS tracked word for a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "languageId": { "type": "string" },
+        "word": { "type": "string" },
+        "translation": { "type": "string" },
+        "srsStage": { "type": "number" },
+        "nextReviewDate": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "languageId", "word", "translation", "srsStage", "nextReviewDate", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "User" },
+      "description": "User profiles."
+    },
+    "/vocabulary/{itemId}": {
+      "schema": { "$ref": "VocabularyItem" },
+      "description": "Spaced repetition vocabulary items."
+    }
+  }
+}
